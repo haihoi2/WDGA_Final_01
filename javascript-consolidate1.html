@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>An object method is a function definition, stored as a property value.</p>
+<p>If you access it without (), it will return the function definition:</p>
+<p id="a">100</p>
+<p id="b">15</p>
+<p id="kq">-</p>
+<p id="demo"></p>
+<p id="age"></p>
+<input type="button" onclick = "addClick();">
+<script>
+
+var addMachine = {
+  a : 0,
+  b : 0,
+  cong : function(e) {
+    e.innerHTML = this.a + this.b;
+  },
+};
+
+function addClick() {
+  addMachine.a = parseInt(document.getElementById("a").innerHTML);
+  addMachine.b = parseInt(document.getElementById("b").innerHTML); 
+  addMachine.cong(document.getElementById("kq"));
+}
+
+
+ 
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    birthYear : 1990,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    },
+    age : function(e) {
+      var currentTime = new Date();
+      e.innerHTML = currentTime.getFullYear() - this.birthYear;
+    },
+};
+
+document.getElementById("demo").innerHTML = person.fullName();
+
+person.age(document.getElementById("age"));
+person.age(document.getElementById("age2"));
+</script>
+</body>
+</html>
+
